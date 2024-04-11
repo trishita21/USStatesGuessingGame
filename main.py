@@ -42,10 +42,7 @@ while len(guessed_states) < 50:
         turtle_obj.write(answer_state, font=("Arial",8,"normal"))
 
 
-not_guessed = []
-for state in state_list:
-    if state not in guessed_states:
-        not_guessed.append(state)
+not_guessed = [ state for state in state_list if state not in guessed_states ]
 
 ng = pandas.DataFrame(not_guessed)
 ng.to_csv("states_to_learn.csv")
